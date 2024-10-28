@@ -1,0 +1,12 @@
+{
+    "name": "lego-remote",
+    "version": "1.0.0",
+    "main": "app.js",
+    "author": "NewSeed",
+    "license": "MIT",
+    "description": "",
+    "type": "module",
+    "dependencies": {
+        "jsonc-parser": "^3.3.1"
+    }
+}
