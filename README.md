@@ -2,10 +2,6 @@
 
 This is a repository for NewSeeds challange for the the Ideon Coder Kids 2024.
 
-## Links
-
-https://www.npmjs.com/package/node-poweredup
-
 ## General tips for coding
 
 The word "this" is used for reference to an object itself. In the example we use a car. When we are
@@ -52,6 +48,14 @@ Can you improve the smoothness of the steering? Examples:
 * Make it possible to run at multiple speeds
 * Make it turn by different amounts
 * Ramp up speed smoothly
+
+## Links
+
+Node PoweredUp (the library we use):
+https://www.npmjs.com/package/node-poweredup
+
+Full documentation of commands (advanced):
+https://nathan.kellenicki.com/node-poweredup/
 
 ## Solutions
 
