@@ -10,6 +10,19 @@ let searchMac2 = '90:84:2B:7D:10:F0'; // 2
 let searchMac3 = '90:84:2B:6F:9D:0A'; // 3
 let searchMac = searchMac1;
 
+let keyboard = (await import('keyboard')).default;
+// make `process.stdin` begin emitting "keypress" events
+keypress(process.stdin);
+
+// listen for the "keypress" event
+process.stdin.on('keypress', function (ch, key) {
+    console.log('key pressed: ', key);
+    if (key && key.ctrl && key.name == 'c') {
+        process.stdin.pause();
+        process.exit(0);
+    }
+});
+
 poweredUP.on("discover", async (data) => { // Wait to discover a Hub
     // get the hub
     let hub = data.hub;
@@ -32,10 +45,9 @@ poweredUP.on("discover", async (data) => { // Wait to discover a Hub
         poweredUP.stop();
         // TODO: add code to control motors
         const car = new Car(motorA, motorB, motorSteering);
-
         car.runCourse();
-
     }
 });
+
 poweredUP.scan(); // Start scanning for Hubs
 console.log("Scanning for Hubs...");
