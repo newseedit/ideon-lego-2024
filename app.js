@@ -7,7 +7,7 @@ let found = false;
 // Modify for each machine
 let searchMac1 = '90:84:2B:6D:76:41'; // 1
 let searchMac2 = '90:84:2B:7D:10:F0'; // 2
-let searchMac3 = '90:84:2B:6D:76:41'; // 3
+let searchMac3 = '90:84:2B:6F:9D:0A'; // 3
 let searchMac = searchMac1;
 
 poweredUP.on("discover", async (data) => { // Wait to discover a Hub

@@ -6,6 +6,8 @@ export class Car {
         this.motorA = motorA;
         this.motorB = motorB;
         this.motorSteering = motorSteering;
+        this.speed = 0;
+        this.angle = 0;
     }
 
     runCourse() {
@@ -36,5 +38,13 @@ export class Car {
     stop() {
         console.log('Stopping');
         // Add logic to stop the car
+    }
+
+    setSpeed(speed){
+        this.motorA.setSpeed(speed);
+        this.motorB.setSpeed(speed);
+    }
+    setAngle(angle){
+        this.motorSteering.gotoAngle(angle);
     }
 }
