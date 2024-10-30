@@ -18,6 +18,15 @@ continuing. Without "await" the code will execute without delay.
 The first command called when the car is connected is "setZero()". Make sure the wheels are facing
 straight forward when this command is executed otherwise the steering will be off.
 
+You need to navigate three windows. The code editor (Visual Studio Code), the command line (Terminal),
+and the documentation in a web browser (Firefox, this file).
+
+Edit the file. Don't forget to save. Test your code by running this command in the terminal:
+
+```
+node app.js
+```
+
 
 ## Assignment 1
 
