@@ -1,11 +1,17 @@
-import PoweredUP from "node-poweredup";
-import {GlobalKeyboardListener} from "node-global-key-listener";
+import PoweredUP from "inimi-poweredup";
 import {Car} from "./car.js";
-const poweredUP = new PoweredUP.PoweredUP();
-const v = new GlobalKeyboardListener();
+
+// Setup LEGO
+const poweredUP = new PoweredUP();
+let found = false;
+// Modify for each machine
+let searchMac = '90:84:2B:6D:76:41';
+
 poweredUP.on("discover", async (hub) => { // Wait to discover a Hub
-    console.log(`Discovered ${hub.name}!`);
-    if (hub.name == "Technic Hub") {
+    // get mac address from hub
+    let hubMac = (await DataTransfer.peripheral.getAddress()).toUpperCase();
+    console.log(`Discovered ${hub.name} at `+hubMac+`!`);
+    if ((hub.name == "Technic Hub") && (hubMac == searchMac)) {
         await hub.connect(); // Connect to the Hub
         console.log("Connected");
         console.log("Setting up motors...");
@@ -16,14 +22,13 @@ poweredUP.on("discover", async (hub) => { // Wait to discover a Hub
         console.log("Checking motor D...")
         const motorSteering = await hub.waitForDeviceAtPort("D");
         console.log(hub.batteryLevel);
+        // Stop scanning for new devices
+        poweredUP.stop();
         // TODO: add code to control motors
         const car = new Car(motorA, motorB, motorSteering);
 
-        car.moveForward();
-        car.turnLeft();
-        car.turnRight();
-        car.moveBackward();
-        car.stop();
+        car.runCourse();
+
     }
 });
 poweredUP.scan(); // Start scanning for Hubs

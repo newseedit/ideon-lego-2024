@@ -1,11 +1,16 @@
 // car.js
 
-class Car {
+export class Car {
 
     constructor(motorA, motorB, motorSteering) {
         this.motorA = motorA;
         this.motorB = motorB;
         this.motorSteering = motorSteering;
+    }
+
+    runCourse() {
+        console.log('Running course');
+        // Add logic to run the course
     }
 
     turnLeft() {

@@ -1,5 +1,5 @@
 {
-    "name": "lego-remote",
+    "name": "ideon-lego-2024",
     "version": "1.0.0",
     "main": "app.js",
     "author": "NewSeed",
@@ -7,6 +7,7 @@
     "description": "",
     "type": "module",
     "dependencies": {
-        "jsonc-parser": "^3.3.1"
+        "inimi-poweredup": "github:InimicalPart/inimi-poweredup",
+        "keypress": "^0.2.1"
     }
 }
