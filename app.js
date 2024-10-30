@@ -49,11 +49,11 @@ process.stdin.on('keypress', function (ch, key) {
             }
             if (key.name == 's'){
                 // car stop
-                // TODO: call a function in the car object
+                car.stop();
             }
             if (key.name == 'c'){
                 // car run course
-                // TODO: call a function in the car object
+                car.runCourse();
             }
         }
     }

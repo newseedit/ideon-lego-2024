@@ -16,6 +16,11 @@ export class Car {
         console.log('Running course');
         // Add logic to run the course - example logic below
         // TODO: Call the functions in the correct order and use wait in between.
+        this.moveForward();
+        await this.sleep(1000);
+        this.turnLeft();
+        await this.sleep(1000);
+        this.stop();
     }
 
     turnLeft() {
@@ -44,9 +49,9 @@ export class Car {
     }
 
     async stop() {
+        // Make the car stop
         console.log('Stopping');
-        // Add logic to stop the car
-        // TODO: Use this.setSpeed();
+        this.setSpeed(0);
     }
 
     /* Internal functions - do not edit these until you know what you are doing */
