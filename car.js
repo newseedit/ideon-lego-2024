@@ -35,20 +35,20 @@ export class Car {
         // TODO: Use this.gotoAngle();
     }
 
-    async moveForward() {
+    moveForward() {
         console.log('Moving forward');
         // Add logic to move forward using motors
         // TODO: Use this.gotoAngle();
         // TODO: Use this.setSpeed();
     }
 
-    async moveBackward() {
+    moveBackward() {
         console.log('Moving backward');
         // Add logic to move backward using motors
         // TODO: Use this.setSpeed();
     }
 
-    async stop() {
+    stop() {
         // Make the car stop
         console.log('Stopping');
         this.setSpeed(0);
