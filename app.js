@@ -5,13 +5,19 @@ import {Car} from "./car.js";
 const poweredUP = new PoweredUP();
 let found = false;
 // Modify for each machine
-let searchMac = '90:84:2B:6D:76:41';
+let searchMac1 = '90:84:2B:6D:76:41'; // 1
+let searchMac2 = '90:84:2B:7D:10:F0'; // 2
+let searchMac3 = '90:84:2B:6D:76:41'; // 3
+let searchMac = searchMac1;
 
-poweredUP.on("discover", async (hub) => { // Wait to discover a Hub
+poweredUP.on("discover", async (data) => { // Wait to discover a Hub
+    // get the hub
+    let hub = data.hub;
     // get mac address from hub
-    let hubMac = (await DataTransfer.peripheral.getAddress()).toUpperCase();
+    let hubMac = (await data.peripheral.getAddress()).toUpperCase();
     console.log(`Discovered ${hub.name} at `+hubMac+`!`);
     if ((hub.name == "Technic Hub") && (hubMac == searchMac)) {
+        console.log("Found mathing hub");
         await hub.connect(); // Connect to the Hub
         console.log("Connected");
         console.log("Setting up motors...");
