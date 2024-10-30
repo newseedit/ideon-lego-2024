@@ -1,3 +1,4 @@
+// Import modules
 import PoweredUP from "inimi-poweredup";
 import {Car} from "./car.js";
 
@@ -33,16 +34,16 @@ process.stdin.on('keypress', function (ch, key) {
                 car.moveForward();
             }
             if (key.name == 'left'){
-                car.gotoAngle(-90);
+                car.turnLeft();
             }
             if (key.name == 'right'){
-                car.gotoAngle(90);
+                car.turnRight();
             }
             if (key.name == 'down'){
-                car.setSpeed(-50);
+                car.moveBackward();
             }
             if (key.name == 's'){
-                car.setSpeed(0);
+                car.stop();
             }
             if (key.name == 'c'){
                 car.runCourse();
@@ -62,7 +63,7 @@ poweredUP.on("discover", async (data) => { // Wait to discover a Hub
     // get mac address from hub
     let mac = (await data.peripheral.getAddress()).toUpperCase();
     if ((hub.name == "Technic Hub") && (mac == searchMac)) {
-        console.log(`Discovered ${hub.name} at `+hubMac+`!`);
+        console.log(`Discovered ${hub.name} at `+mac+`!`);
         console.log("Found mathing hub");
         await hub.connect(); // Connect to the Hub
         console.log("Connected");
@@ -76,7 +77,7 @@ poweredUP.on("discover", async (data) => { // Wait to discover a Hub
         console.log(hub.batteryLevel);
         // Stop scanning for new devices
         poweredUP.stop();
-        // TODO: add code to control motors
+        // Initialize the car
         car = new Car(hub, motorA, motorB, motorSteering);
         car.setZero();
     }
