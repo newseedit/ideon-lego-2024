@@ -1,6 +1,6 @@
 # Ideon Coder Kids 2024
 
-This is a repository for NewSeeds challange for the the Ideon Coder Kids 2024.
+This is a repository for NewSeed's challange for the the Ideon Coder Kids 2024.
 
 ## General tips for coding
 
@@ -51,11 +51,13 @@ Can you improve the smoothness of the steering? Examples:
 
 ## Links
 
-Node PoweredUp (the library we use):
-https://www.npmjs.com/package/node-poweredup
+``inimi-poweredup`` (the library we use for controlling the LEGO™️ cars):
+https://github.com/InimicalPart/inimi-poweredup
+> [!NOTE]
+> ``inimi-poweredup`` is a modernized version of the original [``node-poweredup``](https://www.npmjs.com/package/node-poweredup) library. Please look at [``inimi-poweredup``'s README](https://github.com/InimicalPart/inimi-poweredup/blob/main/README.md) for more information.
 
 Full documentation of commands (advanced):
-https://nathan.kellenicki.com/node-poweredup/
+https://nathan.kellenicki.com/node-poweredup
 
 ## Solutions
 
